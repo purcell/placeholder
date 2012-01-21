@@ -1,4 +1,10 @@
-(function($) {
+(function (factory) {
+	if (typeof define === 'function' && define.amd) {
+		define(['jquery'], factory);
+	} else {
+		factory(jQuery);
+	}
+}(function ($) {
 
 	/**
 	 * Spoofs placeholders in browsers that don't support them (eg Firefox 3)
@@ -78,4 +84,4 @@
 			if ($(this).val() === $(this).attr('placeholder')) $(this).val('');
 		});
 	}
-})(jQuery);
+}));
